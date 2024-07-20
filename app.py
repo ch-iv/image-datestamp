@@ -1,3 +1,7 @@
+import os
+
+print(os.path.dirname(os.path.abspath(__file__)))
+
 from flask import (
     Flask,
     flash,
@@ -11,9 +15,9 @@ from flask import (
 
 import uuid
 
-from .paths import USER_CONTENT_DIR
-from .timestamp import FileProcessMetadata, batch_process_files, BatchProcessResult
-from .forms import parse_form
+from paths import USER_CONTENT_DIR
+from timestamp import FileProcessMetadata, batch_process_files, BatchProcessResult
+from forms import parse_form
 from werkzeug.datastructures.file_storage import FileStorage
 from loguru import logger
 

@@ -5,7 +5,7 @@ from pathlib import Path
 from multiprocessing import cpu_count
 from multiprocessing.pool import ThreadPool
 import zipfile
-from .paths import input_file_dest, output_file_dest
+from paths import input_file_dest, output_file_dest
 from werkzeug.datastructures.file_storage import FileStorage
 import uuid
 from werkzeug.utils import secure_filename

@@ -1,4 +1,4 @@
-from .timestamp import DateStampPosition
+from timestamp import DateStampPosition
 
 
 color_map = {
