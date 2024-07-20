@@ -20,8 +20,9 @@ from timestamp import FileProcessMetadata, batch_process_files, BatchProcessResu
 from forms import parse_form
 from werkzeug.datastructures.file_storage import FileStorage
 from loguru import logger
+import pathlib
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder=pathlib.Path(__file__).parent / "static")
 app.config["UPLOAD_FOLDER"] = USER_CONTENT_DIR
 app.config["MAX_CONTENT_LENGTH"] = 32 * 1024 * 1024
 app.config["SECRET_KEY"] = uuid.uuid4().hex
