@@ -3,7 +3,7 @@ from timestamp import DateStampPosition
 
 color_map = {
     "red": (255, 0, 0, 255),
-    "blue": (0, 255, 0, 255),
+    "blue": (0, 0, 255, 255),
     "black": (0, 0, 0, 255),
     "white": (255, 255, 255, 255),
     "old-yellow": (255, 239, 120, 255),
