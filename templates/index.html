@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+<h1>Image Datestamp Tool</h1>
+<h4>Adds datestamps to your images</h4>
+<form method=post enctype=multipart/form-data>
+    <label for="font">Font:</label>
+    <select name="font" id="font">
+        <option value="News Gothic Condensed Regular">News Gothic Condensed Regular</option>
+    </select>
+
+    <label for="color">Color:</label>
+    <select name="color" id="color">
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="black">Black</option>
+        <option value="white">White</option>
+        <option value="old-yellow">Old yellow</option>
+    </select>
+
+    <label for="position">Position:</label>
+    <select name="position" id="position">
+        <option value="sw">South-west</option>
+        <option value="se">South-east</option>
+        <option value="nw">North-west</option>
+        <option value="ne">North-east</option>
+    </select>
+
+    <label for="scale">Scale:</label>
+    <select name="scale" id="scale">
+        <option value="0.1">10%</option>
+        <option value="0.05">5%</option>
+        <option value="0.03">3%</option>
+        <option value="0.01">1%</option>
+    </select>
+
+    <br>
+    <br>
+    <input type=file name=file multiple>
+    <input type=submit value=Upload>
+</form>
+<h2>FAQ</h2>
+<h5>How does it work?</h5>
+<p>This tool attempts to extract the date a photo was taken from its metadata, a packet of information encoded in the image. If successful, a datestamp is drawn on the image.</p>
+<h5>The datestamp is wrong. Why is that?</h5>
+<p>Sometimes metadata can be inaccurate. This often occurs if the date and time were not properly set on the camera when the photo was taken. Sadly, there is nothing you can do about that.</p>
+<h5>Some of my photos are not in the zip archive. Why is that?</h5>
+<p>When the tool is unable to process a photo, it silently ignores it.</p>
+<h5>Can you see the photos I upload?</h5>
+<p>Yes. Potentially anyone with access to the server running this tool can see your photos. Please refrain from uploading sensitive or illegal content.</p>
+<h5>Why does this website look like it was made in 1994?</h5>
+<p>I believe this design serves its purpose. If you'd like to improve it, you can submit a pull request <a href="https://github.com/ch-iv/image-datestamp">here</a> with a better design.</p>
+<h5>Is this tool open source?</h5>
+<p>Yes. The GitHub repository is available <a href="https://github.com/ch-iv/image-datestamp">here</a>.</p>
+<h5>How can I support this tool?</h5>
+<p>This website doesn't run ads, nor is there a donation link. The best way to support this tool is to tell your friends about it. If you're a developer, you can help develop the tool.</p>
+<h5>There is a feature I want that is missing. How can I request a feature to be added?</h5>
+<p>You can file an "issue" <a href="https://github.com/ch-iv/image-datestamp/issues">here</a> and explain the feature you want.  No promises though ;)</p>
+</body>
+</html>
