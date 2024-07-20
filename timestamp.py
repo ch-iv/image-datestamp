@@ -37,8 +37,11 @@ def get_create_date(im: Image) -> str | None:
     if DATE_TIME_ORIGINAL in exif:
         return exif[DATE_TIME_ORIGINAL]
 
-    gps_info: dict = exif.get_ifd(ExifTags.IFD.GPSInfo)
+    ifd_date_time_original = exif.get_ifd(ExifTags.IFD.Exif).get(DATE_TIME_ORIGINAL)
+    if ifd_date_time_original is not None:
+        return ifd_date_time_original
 
+    gps_info: dict = exif.get_ifd(ExifTags.IFD.GPSInfo)
     if ExifTags.GPS.GPSDateStamp in gps_info:
         return gps_info[ExifTags.GPS.GPSDateStamp]
 
