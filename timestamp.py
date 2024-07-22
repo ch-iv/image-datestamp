@@ -51,6 +51,10 @@ def get_create_date(im: Image) -> str | None:
     return None
 
 
+def format_datestamp(date: str) -> str:
+    return date.replace(":", "/").split(" ")[0]
+
+
 def test_get_create_date():
     all_paths = list((Path(__file__).parent / "test_images").iterdir())
     image_paths = list(filter(lambda x: x.suffix == ".jpg", all_paths))
@@ -264,6 +268,7 @@ def process_file(
             result.reason = "Couldn't extract datestamp metadata"
             return result
 
+        datestamp = format_datestamp(datestamp)
         im = draw_datestamp(im, datestamp=datestamp, **metadata.datestamp_opts)
         im.save(output_dest)
 

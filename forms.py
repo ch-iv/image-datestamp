@@ -7,6 +7,7 @@ color_map = {
     "black": (0, 0, 0, 255),
     "white": (255, 255, 255, 255),
     "old-yellow": (255, 239, 120, 255),
+    "old-orange": (156, 91, 26, 255)
 }
 
 position_map = {
