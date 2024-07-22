@@ -233,11 +233,13 @@ def process_file(
     )
 
     if filename == "":
+        result.filename = "empty"
         result.success = False
         result.reason = "No file was provided."
         return result
 
     if not allowed_file(filename):
+        result.filename = filename
         result.success = False
         result.reason = "File extension is not allowed."
         return result

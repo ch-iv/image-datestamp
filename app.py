@@ -55,17 +55,19 @@ def upload_file():
 
         if not batch_process_result.critical_failure:
             logger.info(f"User {user_id}; {upload_id} successfully processed files.")
-            return redirect(
-                url_for(
-                    "download_file",
-                    user_id=user_id,
-                    upload_id=upload_id,
-                    filename=batch_process_result.output_filename,
-                )
-            )
         else:
             logger.info(f"User {user_id}; {upload_id} critical failure.")
-            return redirect(request.url)
+
+        return render_template(
+            "index.html",
+            batch_process_result=batch_process_result,
+            download_url=url_for(
+                "download_file",
+                user_id=user_id,
+                upload_id=upload_id,
+                filename=batch_process_result.output_filename,
+            )
+        )
 
     return render_template("index.html")
 

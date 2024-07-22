@@ -47,6 +47,40 @@
     <input type=file name=file multiple>
     <input type=submit value=Upload>
 </form>
+
+<br>
+{% if batch_process_result %}
+    {% if batch_process_result.critical_failure %}
+        <div style="color: red">
+            <h4>Critical failure: {{ batch_process_result.reason }}</h4>
+            <ul>
+                {% for file_result in batch_process_result.unsuccessful %}
+                    <li>
+                        {{ file_result.filename }}: {{ file_result.reason }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <div style="color: green">
+            <h4>Files processed successfully.</h4>
+            <a href="{{ download_url }}">Download</a>
+            <ul>
+                {% for file_result in batch_process_result.successful %}
+                    <li>
+                        {{ file_result.filename }}: Processed
+                    </li>
+                {% endfor %}
+                {% for file_result in batch_process_result.unsuccessful %}
+                    <li style="color: red">
+                        {{ file_result.filename }}: {{ file_result.reason }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endif %}
+
 <h2>FAQ</h2>
 <h5>How does it work?</h5>
 <p>This tool attempts to extract the date a photo was taken from its metadata, a packet of information encoded in the image. If successful, a datestamp is drawn on the image.</p>
