@@ -6,47 +6,63 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
-<h1>Image Datestamp Tool</h1>
+    <div class="header">
+        <h1>Image Datestamp Tool</h1>
+        <a href="https://github.com/ch-iv/image-datestamp" target="_blank" class="github-icon" aria-label="View on GitHub">
+            <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true">
+                <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+            </svg>
+        </a>
+    </div>
 <h4>Adds datestamps to your images</h4>
-<form method=post enctype=multipart/form-data>
-    <label for="font">Font:</label>
-    <select name="font" id="font">
-        <option value="News Gothic Condensed Regular" selected="selected">News Gothic Condensed Regular</option>
-    </select>
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <div class="form-item">
+            <label for="font">Font:</label>
+            <select name="font" id="font">
+                <option value="News Gothic Condensed Regular" selected="selected">News Gothic Condensed Regular</option>
+            </select>
+        </div>
 
-    <label for="color">Color:</label>
-    <select name="color" id="color">
-        <option value="red">Red</option>
-        <option value="blue">Blue</option>
-        <option value="black">Black</option>
-        <option value="white">White</option>
-        <option value="old-orange" selected="selected">Old orange</option>
-        <option value="old-yellow">Old yellow</option>
-    </select>
+        <div class="form-item">
+            <label for="color">Color:</label>
+            <select name="color" id="color">
+                <option value="white">White</option>
+                <option value="black">Black</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="old-orange" selected="selected">Old orange</option>
+                <option value="old-yellow">Old yellow</option>
+            </select>
+        </div>
 
-    <label for="position">Position:</label>
-    <select name="position" id="position">
-        <option value="sw">South-west</option>
-        <option value="se" selected="selected">South-east</option>
-        <option value="nw">North-west</option>
-        <option value="ne">North-east</option>
-    </select>
+        <div class="form-item">
+            <label for="position">Position:</label>
+            <select name="position" id="position">
+                <option value="sw">Bottom Left</option>
+                <option value="se" selected="selected">Bottom Right</option>
+                <option value="nw">Top Left</option>
+                <option value="ne">Top Right</option>
+            </select>
+        </div>
 
-    <label for="scale">Scale:</label>
-    <select name="scale" id="scale">
-        <option value="0.1">10%</option>
-        <option value="0.05" selected="selected">5%</option>
-        <option value="0.03">3%</option>
-        <option value="0.01">1%</option>
-    </select>
+        <div class="form-item">
+            <label for="scale">Scale:</label>
+            <select name="scale" id="scale">
+                <option value="0.1">10%</option>
+                <option value="0.05" selected="selected">5%</option>
+                <option value="0.03">3%</option>
+                <option value="0.01">1%</option>
+            </select>
+        </div>
+    </div>
 
-    <br>
-    <br>
-    <input type=file name=file multiple>
-    <input type=submit value=Upload>
+    <input type="file" name="file" multiple>
+    <input type="submit" value="Upload">
 </form>
 
 <br>
@@ -91,8 +107,6 @@
 <p>When the tool is unable to process a photo, it silently ignores it.</p>
 <h5>Can you see the photos I upload?</h5>
 <p>Yes. Potentially anyone with access to the server running this tool can see your photos. Please refrain from uploading sensitive or illegal content.</p>
-<h5>Why does this website look like it was made in 1994?</h5>
-<p>I believe this design serves its purpose. If you'd like to improve it, you can submit a pull request <a href="https://github.com/ch-iv/image-datestamp">here</a> with a better design.</p>
 <h5>Is this tool open source?</h5>
 <p>Yes. The GitHub repository is available <a href="https://github.com/ch-iv/image-datestamp">here</a>.</p>
 <h5>How can I support this tool?</h5>

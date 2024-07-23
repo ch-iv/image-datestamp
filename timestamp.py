@@ -14,7 +14,7 @@ from io import BytesIO
 from os import fspath
 from shutil import copyfileobj
 
-ALLOWED_EXTENSIONS = {"jpg"}
+ALLOWED_EXTENSIONS = {"jpg", "jpeg"}
 
 
 EXIF_MODIFY_DATE = 0x0132
