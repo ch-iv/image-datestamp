@@ -1,6 +1,6 @@
 from pathlib import Path
 
-
+APP_STATIC_FOLDER = Path(__file__).parent / "static"
 USER_CONTENT_DIR = Path(__file__).parent / "user_content"
 _USER_CONTENT_OUT_DIR = USER_CONTENT_DIR / "out"
 _USER_CONTENT_IN_DIR = USER_CONTENT_DIR / "in"
