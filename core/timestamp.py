@@ -5,7 +5,7 @@ from pathlib import Path
 from multiprocessing import cpu_count
 from multiprocessing.pool import ThreadPool
 import zipfile
-from paths import input_file_dest, output_file_dest
+from config.paths import input_file_dest, output_file_dest
 from werkzeug.datastructures.file_storage import FileStorage
 import uuid
 from werkzeug.utils import secure_filename
@@ -13,6 +13,7 @@ from dataclasses import dataclass
 from io import BytesIO
 from os import fspath
 from shutil import copyfileobj
+from config.paths import FontPaths
 
 ALLOWED_EXTENSIONS = {"jpg", "jpeg"}
 
@@ -81,9 +82,8 @@ def draw_datestamp(
     margin_scaling_factor: float = 0.05,
 ) -> Image:
     if font_path is None:
-        font_path = (
-            Path(__file__).parent / "fonts" / "News Gothic Condensed Regular.ttf"
-        )
+        print(FontPaths.DEFAULT)
+        font_path = FontPaths.DEFAULT
     drawing_context = ImageDraw.Draw(im)
     font_size = int(im.width * font_scaling_factor)
     font = ImageFont.truetype(font_path, font_size)

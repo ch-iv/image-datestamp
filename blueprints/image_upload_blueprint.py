@@ -7,12 +7,14 @@ from flask import (
     session,
     render_template,
 )
-from timestamp import FileProcessMetadata, batch_process_files, BatchProcessResult
-from forms import parse_form
 from werkzeug.datastructures.file_storage import FileStorage
 from loguru import logger
 import uuid
-from paths import APP_STATIC_FOLDER
+
+from config.paths import APP_STATIC_FOLDER
+from core.timestamp import FileProcessMetadata, batch_process_files, BatchProcessResult
+from forms.forms import parse_form
+
 
 image_upload_blueprint = Blueprint(
     'image_upload',
