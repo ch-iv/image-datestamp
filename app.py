@@ -9,7 +9,7 @@ from blueprints.image_upload_blueprint import image_upload_blueprint
 
 logger.add(LOGS_DIR / "log_{time}.log", rotation="1 MB")
 
-app = Flask(__name__, static_folder = APP_STATIC_FOLDER)
+app = Flask(__name__, static_folder=APP_STATIC_FOLDER)
 
 app.config["UPLOAD_FOLDER"] = USER_CONTENT_DIR
 app.config["MAX_CONTENT_LENGTH"] = 32 * 1024 * 1024

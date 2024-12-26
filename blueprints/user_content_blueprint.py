@@ -1,9 +1,9 @@
 from flask import Blueprint, current_app, send_from_directory
 
 user_content_blueprint = Blueprint(
-    'user_content',
+    "user_content",
     __name__,
-    url_prefix='/user_content',
+    url_prefix="/user_content",
 )
 
 

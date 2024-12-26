@@ -17,11 +17,12 @@ from forms.forms import parse_form
 
 
 image_upload_blueprint = Blueprint(
-    'image_upload',
+    "image_upload",
     __name__,
-    template_folder='templates',
+    template_folder="templates",
     static_folder=APP_STATIC_FOLDER,
 )
+
 
 @image_upload_blueprint.route("/", methods=["GET", "POST"])
 def upload_file():
@@ -61,7 +62,7 @@ def upload_file():
                 user_id=user_id,
                 upload_id=upload_id,
                 filename=batch_process_result.output_filename,
-            )
+            ),
         )
 
     return render_template("index.html")

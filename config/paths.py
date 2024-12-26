@@ -29,5 +29,6 @@ def output_file_dest(user_id: str, upload_id: str, filename: str) -> Path:
     ensure_user_upload_tree(user_id, upload_id)
     return _USER_CONTENT_OUT_DIR / user_id / upload_id / filename
 
+
 class FontPaths:
     DEFAULT = FONTS_DIR / "News Gothic Condensed Regular.ttf"
