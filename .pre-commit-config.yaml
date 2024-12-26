@@ -1,0 +1,29 @@
+repos:
+  -   repo: https://github.com/rbubley/mirrors-prettier
+      rev: v3.4.2
+      hooks:
+        - id: prettier
+          types_or: [javascript, jsx, css, scss, html]
+  -   repo: https://github.com/thibaudcolas/pre-commit-stylelint
+      rev: v16.11.0
+      hooks:
+        - id: stylelint
+          additional_dependencies: [
+            "stylelint@16.11.0",
+            "postcss-scss@4.0.9",
+            "stylelint-config-sass-guidelines@12.1.0",
+            "postcss@8.4.49",
+          ]
+          args: ["--fix"]
+          types_or: ["css", "scss"]
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.4
+    hooks:
+      - id: ruff
+        args: [ --fix ]
+      - id: ruff-format
+
+exclude: .venv
+
+ci:
+  autoupdate_schedule: monthly
